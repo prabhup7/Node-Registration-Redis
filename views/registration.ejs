@@ -1,0 +1,120 @@
+<!--
+CMPE 280 Assignment 5 - RedisCache And Registration Page Integration
+Xiaoli Jinag 009390901
+-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Registration - Library</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+<header>
+    <h3>CMPE 280 Assignment 4</h3>
+    <h3>RedisCache And Registration Page Integration </h3>
+    <h4>Xiaoli Jiang</h4>
+</header>
+
+<div class="content">
+    <h2>Register A New User</h2>
+    <form name="register_form" id="register_form" method="post" action="/registration">
+        <div class="row">
+            <aside><label>First Name</label></aside>
+            <section class="midcol"><input type="text" name="fname" placeholder="Enter first name"/></section>
+        </div>
+
+        <div class="row">
+            <aside><label>Last Name</label></aside>
+            <section class="midcol"><input type="text" name="lname" placeholder="Enter last name"/></section>
+        </div>
+
+        <div class="row">
+            <aside><label>Email</label></aside>
+            <section class="midcol"><input type="email" name="email" placeholder="Enter email address"/></section>
+        </div>
+
+        <div class="row">
+            <aside><label>Password</label></aside>
+            <section class="midcol"><input type="password" name="password" placeholder="Enter password"/></section>
+            <section class="rigtcol">
+                <progress id="psw_progress" max="100"></progress>
+                <div id="pro_text"></div>
+            </section>
+        </div>
+
+        <div class="row">
+            <aside><label>Confirm Password</label></aside>
+            <section class="midcol"><input type="password" name="psw_conf" placeholder="Must be same as password" /></section>
+        </div>
+
+        <div class="row">
+            <aside><label>D. O. B.</label></aside>
+            <section class="midcol"><input type="date" name="dob"/></section>
+        </div>
+
+        <div class="row">
+            <aside><label>D. O. B. with time</label></aside>
+            <section class="midcol"><input type="datetime" name="dob_time"/></section>
+        </div>
+
+        <div class="row">
+            <aside><label>Local D. O. B.</label></aside>
+            <section class="midcol"><input type="datetime-local" name="dob_local"/></section>
+        </div>
+
+
+        <div class="row">
+            <aside><label>SSN</label></aside>
+            <section class="midcol"><input type="number" name="ssn" pattern="[0-9]{3}[0-9]{2}[0-9]{4}" placeholder="XXX-XX-XXXX"/></section>
+        </div>
+
+        <div class="row">
+            <aside><label>Phone</label></aside>
+            <section class="midcol"><input type="number" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="XXX-XXX-XXXX"/></section>
+        </div>
+
+        <div class="row">
+            <aside><label>Credit Card No</label></aside>
+            <section class="midcol"><input type="number" name="credit_card" pattern="([0-9]{4}[0-9]{4}[0-9]{4}[0-9]{4})|([0-9]{4}[0-9]{4}[0-9]{4})" placeholder="XXXX-XXXX-XXXX(-XXXX)"/></section>
+        </div>
+
+        <br/>
+
+        <div class="row center">
+            Drag the three images here to enable create button
+            <br/>
+            <!--drag and drop, handler functions in webapp.js-->
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <br/>
+
+            <img id="drag1" src="img/1.jpeg" draggable="true" ondragstart="drag(event)" width="100">
+            <img id="drag2" src="img/2.jpeg" draggable="true" ondragstart="drag(event)" width="100">
+            <img id="drag3" src="img/3.png" draggable="true" ondragstart="drag(event)" width="100">
+        </div>
+
+        <br/>
+        <div class="row center">
+            <input id="submitBtn" type="submit" name="submitBtn" value="Create" disabled/>
+        </div>
+
+    </form>
+
+</div>
+
+<footer>
+    <p> &copy; CMPE 280 Spring2015 - Xiaoli Jiang</p>
+</footer>
+
+<!--include jquery and ajax-->
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+<!--include md5 hashing library -->
+<script src="js/md5.js"></script>
+
+<!--JS Library-->
+<script src="js/registration.js"></script>
+<script src="js/webapp.js"></script>
+
+</body>
+</html>
