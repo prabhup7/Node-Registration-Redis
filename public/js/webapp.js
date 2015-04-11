@@ -1,5 +1,5 @@
 
-//CMPE 280 Assignment 4 - Registration Page III
+//CMPE 280 Assignment 5 - RedisCache And Registration Page Integration
 //Xiaoli Jinag 009390901
 
 var form = document.register_form;
@@ -127,7 +127,7 @@ form.onsubmit = function (e) {
         data: jsondata,
         success: function(response){
             console.log(response);
-            alert("Create user (id:" + response.insertId + ") succeed!!");
+            alert("Create user (key:" + response.email + ") succeed!!");
             window.location.replace("/users");
         }
     });
